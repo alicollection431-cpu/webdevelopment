@@ -1,0 +1,201 @@
+/* index.css - Global Styles with Complete Theme Support */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   DARK MODE (Default)
+   ======================================== */
+:root {
+  /* Backgrounds */
+  --bg-primary: #0b0f1a;
+  --bg-secondary: #111827;
+  --bg-card: rgba(31, 41, 55, 0.4);
+  --bg-card-hover: rgba(31, 41, 55, 0.6);
+  --bg-input: rgba(255, 255, 255, 0.03);
+  --bg-stat: rgba(31, 41, 55, 0.3);
+  
+  /* Text Colors */
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dark: #64748b;
+  --text-heading: #ffffff;
+  
+  /* Borders & Shadows */
+  --border-color: rgba(255, 255, 255, 0.04);
+  --border-light: rgba(255, 255, 255, 0.06);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --shadow-light: rgba(0, 0, 0, 0.2);
+  
+  /* Gradients */
+  --gradient-main: linear-gradient(145deg, #0b0f1a 0%, #111827 100%);
+  --gradient-card: linear-gradient(145deg, rgba(31, 41, 55, 0.4), rgba(31, 41, 55, 0.2));
+  
+  /* Special */
+  --input-border: rgba(255, 255, 255, 0.06);
+  --scrollbar-track: #111827;
+  --scrollbar-thumb: #7c3aed;
+}
+
+/* ========================================
+   LIGHT MODE - All text black
+   ======================================== */
+[data-theme="light"] {
+  /* Backgrounds - Light */
+  --bg-primary: #f1f5f9;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --bg-input: rgba(0, 0, 0, 0.03);
+  --bg-stat: rgba(0, 0, 0, 0.03);
+  
+  /* Text Colors - ALL BLACK */
+  --text-primary: #0a0a0a;
+  --text-secondary: #1a1a1a;
+  --text-muted: #333333;
+  --text-dark: #1a1a1a;
+  --text-heading: #000000;
+  
+  /* Borders & Shadows - Light */
+  --border-color: rgba(0, 0, 0, 0.06);
+  --border-light: rgba(0, 0, 0, 0.08);
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  
+  /* Gradients - Light */
+  --gradient-main: linear-gradient(145deg, #f1f5f9 0%, #ffffff 100%);
+  --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.7));
+  
+  /* Special */
+  --input-border: rgba(0, 0, 0, 0.06);
+  --scrollbar-track: #e2e8f0;
+  --scrollbar-thumb: #7c3aed;
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ========================================
+   ALL HEADINGS - Dark mode white, Light mode black
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+  transition: color 0.3s ease;
+  font-weight: 700;
+}
+
+/* ========================================
+   ALL PARAGRAPHS
+   ======================================== */
+p {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+/* ========================================
+   ALL LINKS
+   ======================================== */
+a {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #a78bfa;
+}
+
+/* ========================================
+   ALL INPUTS & TEXTAREA
+   ======================================== */
+input, textarea, select {
+  background: var(--bg-input);
+  border: 1px solid var(--input-border);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus,
+textarea:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9;
+}
+
+/* ========================================
+   SELECTION
+   ======================================== */
+::selection {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Smooth transition for all elements */
+* {
+  transition: background 0.3s ease, 
+              color 0.3s ease, 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease,
+              background-color 0.3s ease;
+}
